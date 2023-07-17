@@ -13,6 +13,17 @@ pip install azure-openai-tr
 ```
 
 ## Use it
+
+Copy `.env.example` to `.env` and edit `.env` accordingly
+```
+# .env, e.g.
+OPENAI_API_BASE = https://dattw.openai.azure.com
+OPENAI_API_KEY = ...
+DEPLOYMENT_NAME = chat
+```
+
+or set those environ variables from the command line.
+
 ```python
 from azure_openai_tr import azure_openai_tr
 

@@ -1,0 +1,25 @@
+{
+    "version": "0.1.0a0",
+    "devDependencies": {
+        "npm-run-all": "^4.1.5",
+        "cross-env": "^7.0.3",
+        "husky": "^8.0.0"
+    },
+    "scripts": {
+        "start": "pyright && pytest && yarn style",
+        "test": "nodemon -w tests -w azure_openai_tr -x pytest tests",
+        "pyright": "nodemon -w azure_openai_tr -w .venv -e .py -x pyright azure_openai_tr tests",
+        "pytest": "nodemon -w tests -w azure_openai_tr -e .py -x pytest tests azure_openai_tr",
+        "style": "nodemon -w azure_openai_tr -w tests -x \"black tests azure_openai_tr && python -m flake8\"",
+        "docstyle": "nodemon -w azure_openai_tr -w tests -x pydocstyle --convention=google tests azure_openai_tr",
+        "pylint": "nodemon -w azure_openai_tr -e .py -x pylint azure_openai_tr",
+        "test:azure_openai_tr": "nodemon -w tests -e .py -x pytest -k azure_openai_tr tests",
+        "publish": "poetry build && poetry publish",
+        "black": "black tests azure_openai_tr",
+        "flake8": "flake8 tests azure_openai_tr",
+        "pflake8": "pflake8 tests azure_openai_tr",
+        "pep257": "pep257 tests azure_openai_tr",
+        "final": "run-s docstyle black flake8 pytest",
+        "prepare": "husky install"
+    }
+}

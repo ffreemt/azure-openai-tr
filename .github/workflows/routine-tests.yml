@@ -25,6 +25,6 @@ jobs:
       - name: Run flake8
         run: |
           poetry run flake8 azure_openai_tr --exit-zero
-          # poetry run pytest
+          # poetry run pytest tests
       - name: Run pytest
         run: poetry run pytest tests
